@@ -135,10 +135,6 @@
             "selected": true,
             "simple_modifications": [
                 {
-                    "from": { "key_code": "right_command" },
-                    "to": [{ "consumer_key_code": "play_or_pause" }]
-                },
-                {
                     "from": { "key_code": "y" },
                     "to": [{ "key_code": "z" }]
                 },
@@ -147,8 +143,8 @@
                     "to": [{ "key_code": "y" }]
                 },
                 {
-                    "from": { "key_code": "right_option" },
-                    "to": [{ "key_code": "left_control" }]
+                    "from": { "key_code": "right_command" },
+                    "to": [{ "consumer_key_code": "play_or_pause" }]
                 }
             ],
             "virtual_hid_keyboard": { "keyboard_type_v2": "iso" }
