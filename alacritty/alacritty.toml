@@ -15,15 +15,18 @@ padding.y = 10
 opacity = 0.8
 blur = true
 
-option_as_alt = "Both"
+# Option_as_alt = "Both"
 
 [font]
 normal.family = "MesloLGS Nerd Font Mono"
-
-#regular
+# regular
 size = 17
 
-#for video
+[selection]
+# Default semantic_escape_chars minus the forward slash '/'
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+
+  #for video
 # size = 35.0
 
 # coolnight theme to the themes folder
