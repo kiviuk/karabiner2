@@ -31,3 +31,8 @@ semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
 
 # coolnight theme to the themes folder
 # curl https://raw.githubusercontent.com/josean-dev/dev-environment-files/main/.config/alacritty/themes/themes/coolnight.toml --output ~/.config/alacritty/themes/themes/coolnight.toml
+
+[keyboard]
+bindings = [
+  { key = "Return", mods = "Command", chars = "\u000a" },
+]

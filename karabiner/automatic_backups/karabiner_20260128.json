@@ -4,20 +4,6 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Focus Citrix (Run after Key Up)",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "comma",
-                                    "modifiers": { "mandatory": ["left_control", "left_option", "left_command"] }
-                                },
-                                "to": [{ "key_code": "vk_none" }],
-                                "to_after_key_up": [{ "shell_command": "/opt/homebrew/bin/python3.11 /Users/mobe/bin/automate/focus.py 'Citrix Workspace'" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Super Key + a → AI correct selected text",
                         "manipulators": [
                             {
