@@ -1,0 +1,104 @@
+# https://github.com/charmbracelet/mods
+
+# Default API to use
+# default-api: deepseek
+default-api: openrouter
+
+# Default model (Fast chat model)
+default-model: nvi
+
+# THEME & UX
+# Render output as raw text when connected to a TTY (pipes)
+raw: false
+# Quiet mode (false = show spinner)
+quiet: false
+# Fancy UI level
+fanciness: 10
+# Text to show while generating
+status-text: "DeepSeek is thinking..."
+# Theme (charm, catppuccin, dracula, base16)
+theme: dracula
+# Wrap output (0 = disabled, nice for copying code)
+word-wrap: 180
+
+# BEHAVIOR
+# Temperature (1.0 is creative, 0.2 is strict)
+temp: 1.0
+topp: 1.0
+# Disable input limit so you can pipe large files/logs
+no-limit: true
+# Include the prompt in the output? (No, keeps it clean)
+include-prompt: 0
+# IMPORTANT: Increased limits so code isn't cut off
+max-retries: 3
+max-completion-tokens: 8192
+
+# ROLES (System Prompts)
+# You can use these via: mods --role shell "..."
+role: "default"
+roles:
+  "default":
+    - "You are a helpful Senior Software Engineer assistant (macOS/Linux)."
+    - "Be concise and favor technical accuracy."
+  
+  # Use: mods --role shell "undo last git commit"
+  shell:
+    - "You are a shell expert."
+    - "You do not explain anything."
+    - "You simply output one liners to solve the problems."
+    - "ONLY the command, no markdown, no backticks."
+
+  # Use: mods --role plain "explain this code"
+  plain:
+    - "Provide the answer in PLAIN TEXT only."
+    - "Do NOT use Markdown, backticks, or code blocks."
+    - "Use indentation for code."
+
+  translate:
+    - "You are an technical Editor and translator."
+    - "Translate all input text to English."
+    - "Output only the translated text, no explanations."
+  
+
+# APIS CONFIGURATION
+apis:
+  deepseek:
+    base-url: https://api.deepseek.com
+    api-key-cmd: cat /Users/mobe/bin/DEEPSEEK-TOKEN.txt
+    models:
+      deepseek-chat:
+        aliases: ["chat", "v3"]
+        max-input-chars: 64000
+      deepseek-reasoner:
+        aliases: ["r1", "reasoner"]
+        max-input-chars: 64000
+
+  openrouter:
+    base-url: https://openrouter.ai/api/v1
+    api-key-cmd: cat /Users/mobe/bin/OR_TOKEN.txt
+    models:
+      deepseek/deepseek-v3.2:
+        aliases: ["chat", "v3"]
+        max-input-chars: 64000
+      gpt-4o-mini:
+        aliases: ["mini"]
+        max-input-chars: 392000
+      gpt-5.2-chat:
+        aliases: [52"]
+        max-input-chars: 392000
+      xiaomi/mimo-v2-flash:
+        aliases: ["mimo"] 
+        max-input-chars: 392000
+      nvidia/nemotron-3-nano-30b-a3b:free:
+        aliases: ["nvi"] 
+        max-input-chars: 392000
+      minimax/minimax-m2.5:
+        aliases: ["m2"]
+        max-input-chars: 392000
+      z-ai/glm-5:
+        aliases: ["glm"]
+        max-input-chars: 392000
+      moonshotai/kimi-k2-thinking:
+        aliases: ["kimi"]
+        max-input-chars: 392000
+
