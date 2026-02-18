@@ -4,32 +4,6 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "VoiceComEn.app",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "return_or_enter",
-                                    "modifiers": { "mandatory": ["control", "option", "command"] }
-                                },
-                                "to": [{ "shell_command": "open -a 'VoiceComEn.app'" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "VoiceComGer.app",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "y",
-                                    "modifiers": { "mandatory": ["control", "option", "command"] }
-                                },
-                                "to": [{ "shell_command": "open -a 'VoiceComGer.app'" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Focus Citrix (Run after Key Up)",
                         "manipulators": [
                             {
@@ -58,6 +32,19 @@
                                     },
                                     { "shell_command": "sleep 0.2 && open -a 'AICorrect'" }
                                 ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Ctrl+Option+Cmd+Return → Voice Toggle",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "return_or_enter",
+                                    "modifiers": { "mandatory": ["control", "option", "command"] }
+                                },
+                                "to": [{ "shell_command": "open -a 'WhisperRec.app'" }],
                                 "type": "basic"
                             }
                         ]

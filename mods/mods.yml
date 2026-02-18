@@ -5,7 +5,7 @@
 default-api: openrouter
 
 # Default model (Fast chat model)
-default-model: nvi
+default-model: o46
 
 # THEME & UX
 # Render output as raw text when connected to a TTY (pipes)
@@ -15,7 +15,7 @@ quiet: false
 # Fancy UI level
 fanciness: 10
 # Text to show while generating
-status-text: "DeepSeek is thinking..."
+status-text: "We're multiplying..."
 # Theme (charm, catppuccin, dracula, base16)
 theme: dracula
 # Wrap output (0 = disabled, nice for copying code)
@@ -64,7 +64,7 @@ roles:
 apis:
   deepseek:
     base-url: https://api.deepseek.com
-    api-key-cmd: cat /Users/mobe/bin/DEEPSEEK-TOKEN.txt
+    api-key-cmd: cat /Users/mobe/Tokens/DEEPSEEK-TOKEN.txt
     models:
       deepseek-chat:
         aliases: ["chat", "v3"]
@@ -75,10 +75,13 @@ apis:
 
   openrouter:
     base-url: https://openrouter.ai/api/v1
-    api-key-cmd: cat /Users/mobe/bin/OR_TOKEN.txt
+    api-key-cmd: cat /Users/mobe/Tokens/OR_TOKEN.txt
     models:
       deepseek/deepseek-v3.2:
         aliases: ["chat", "v3"]
+        max-input-chars: 64000
+      deepseek/deepseek-v3.2-speciale:
+        aliases: ["speciale"]
         max-input-chars: 64000
       gpt-4o-mini:
         aliases: ["mini"]
@@ -100,5 +103,8 @@ apis:
         max-input-chars: 392000
       moonshotai/kimi-k2-thinking:
         aliases: ["kimi"]
+        max-input-chars: 392000
+      anthropic/claude-opus-4.6:
+        aliases: ["o46"]
         max-input-chars: 392000
 
