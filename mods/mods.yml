@@ -5,7 +5,10 @@
 default-api: openrouter
 
 # Default model (Fast chat model)
-default-model: o46
+# default-model: o46
+# default-model: glm5
+# default-model: speciale
+default-model: xmpro
 
 # THEME & UX
 # Render output as raw text when connected to a TTY (pipes)
@@ -40,7 +43,7 @@ roles:
   "default":
     - "You are a helpful Senior Software Engineer assistant (macOS/Linux)."
     - "Be concise and favor technical accuracy."
-  
+
   # Use: mods --role shell "undo last git commit"
   shell:
     - "You are a shell expert."
@@ -58,7 +61,7 @@ roles:
     - "You are an technical Editor and translator."
     - "Translate all input text to English."
     - "Output only the translated text, no explanations."
-  
+
 
 # APIS CONFIGURATION
 apis:
@@ -90,16 +93,16 @@ apis:
         aliases: [52"]
         max-input-chars: 392000
       xiaomi/mimo-v2-flash:
-        aliases: ["mimo"] 
+        aliases: ["mimo"]
         max-input-chars: 392000
       nvidia/nemotron-3-nano-30b-a3b:free:
-        aliases: ["nvi"] 
+        aliases: ["nvi"]
         max-input-chars: 392000
       minimax/minimax-m2.5:
         aliases: ["m2"]
         max-input-chars: 392000
       z-ai/glm-5:
-        aliases: ["glm"]
+        aliases: ["glm5"]
         max-input-chars: 392000
       moonshotai/kimi-k2-thinking:
         aliases: ["kimi"]
@@ -107,4 +110,8 @@ apis:
       anthropic/claude-opus-4.6:
         aliases: ["o46"]
         max-input-chars: 392000
+      xiaomi/mimo-v2-pro:
+        aliases: ["xmpro"]
+        max-input-chars: 392000
+
 
