@@ -104,7 +104,11 @@
             "autoSearchPaths": true,
             "diagnosticMode": "workspace",
             "autoImportCompletions": true,
-            "extraPaths": ["lib"]
+            "extraPaths": [
+                "lib",
+                "gigalix/*/processing",
+                "gigalix/*/tests"
+            ]
           }
         }
       }
