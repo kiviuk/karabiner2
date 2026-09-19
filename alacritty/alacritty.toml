@@ -35,4 +35,5 @@ semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
 [keyboard]
 bindings = [
   { key = "Return", mods = "Command", chars = "\u000a" },
+  { key = "Space", mods = "Control", chars = "\u0000" },
 ]

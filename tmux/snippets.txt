@@ -1,0 +1,14 @@
+repeat your response and use proper intelligible english
+rewrite comment, use proper intelligible every-day english
+explain this code and suggest improvements\nFocus on readability and edge cases.
+write unit tests for the selected function, covering edge cases
+Did you verify your claims against the xmart source: /Users/mobe/Projects/xmart (ignore legacy xml focus on the csharp code only)
+Check against the xmart source: /Users/mobe/Projects/xmart (ignore legacy xml focus on the csharp code only)
+You have shared the line numbers but didn't include the exact filename
+Where did you find this code?
+Nobody understands how this was written
+Create a work item and branch, push the branch then use mise ci to run the ci pipeline
+Create a work item and branch 
+Create a commit based on the current work (git diff)
+Create a plan an save it to a physical file, share the location of the file, so that i can review the plan 
+brevity is king

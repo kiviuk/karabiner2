@@ -1,0 +1,50 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      // "shift shift": "file_finder::Toggle"
+    },
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      // "j k": "vim::NormalBefore"
+    },
+  },
+  {
+    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+    "bindings": {
+      "shift-up": "vim::ToggleVisualLine",
+      "shift-down": "vim::ToggleVisualLine",
+      "v v": "editor::SelectLargerSyntaxNode"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
+    "bindings": {
+      "shift-up": "vim::Up",
+      "shift-down": "vim::Down"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-cmd-up": "editor::MoveLineUp",
+      "alt-cmd-down": "editor::MoveLineDown"
+    }
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "cmd-t": ["task::Spawn", { "task_name": "pytest: current file" }],
+      "cmd-m": ["task::Spawn", { "task_name": "mypy: current file" }]
+    },
+  },
+]
