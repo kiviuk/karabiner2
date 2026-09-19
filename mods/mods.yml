@@ -1,14 +1,27 @@
 # https://github.com/charmbracelet/mods
 
 # Default API to use
-# default-api: deepseek
-default-api: openrouter
+default-api: deepseek
+# default-api: alibaba
+# default-api: openrouter
+# # default-api: nvidia
 
 # Default model (Fast chat model)
 # default-model: o46
 # default-model: glm5
-# default-model: speciale
-default-model: xmpro
+# default-model: qwen36
+# default-model: qwen3c
+default-model: v4
+# default-model: v4f
+# default-model: xmpro
+# default-model: kat
+# default-model: nemotron
+# default-model: kimi
+# default-model: m2
+# default-model: m2free
+# default-model: kimi-k2.6
+# default-model: minimax-m27
+# default-model: q36p
 
 # THEME & UX
 # Render output as raw text when connected to a TTY (pipes)
@@ -18,7 +31,7 @@ quiet: false
 # Fancy UI level
 fanciness: 10
 # Text to show while generating
-status-text: "We're multiplying..."
+status-text: "{model_full_name}@{temp}: We're multiplying..."
 # Theme (charm, catppuccin, dracula, base16)
 theme: dracula
 # Wrap output (0 = disabled, nice for copying code)
@@ -26,7 +39,7 @@ word-wrap: 180
 
 # BEHAVIOR
 # Temperature (1.0 is creative, 0.2 is strict)
-temp: 1.0
+temp: 0.1
 topp: 1.0
 # Disable input limit so you can pipe large files/logs
 no-limit: true
@@ -69,11 +82,65 @@ apis:
     base-url: https://api.deepseek.com
     api-key-cmd: cat /Users/mobe/Tokens/DEEPSEEK-TOKEN.txt
     models:
-      deepseek-chat:
-        aliases: ["chat", "v3"]
+      deepseek-v4-pro:
+        aliases: ["v4"]
         max-input-chars: 64000
-      deepseek-reasoner:
-        aliases: ["r1", "reasoner"]
+      deepseek-v4-flash:
+        aliases: ["v4f"]
+        max-input-chars: 64000
+  nvidia:
+    base-url: https://integrate.api.nvidia.com/v1
+    api-key-cmd: cat /Users/mobe/Tokens/NVIDIA-TOKEN.txt
+    models:
+      minimaxai/minimax-m2.7:
+        aliases: ["minimax-m27"]
+        max-input-chars: 64000
+      z-ai/glm-5.1:
+        aliases: ["glm5"]
+        max-input-chars: 64000
+      deepseek-ai/deepseek-v4-pro:
+        aliases: ["v4"]
+        max-input-chars: 64000
+      deepseek-ai/deepseek-v4-flash:
+        aliases: ["v4f"]
+        max-input-chars: 64000
+      openai/gpt-oss-120b:
+        aliases: ["gpt-oss-120b"]
+        max-input-chars: 64000
+      moonshotai/kimi-k2.6:
+        aliases: ["kimi-k2.6"]
+        max-input-chars: 64000
+  alibaba:
+    base-url: https://dashscope-intl.aliyuncs.com/compatible-mode/v1
+    api-key-cmd: cat /Users/mobe/Tokens/ALI_BABA_TOKEN_INTERNATIONAL.txt
+    models:
+      qwen3.6-plus:
+        aliases: ["qwen3.6-plus"]
+        max-input-chars: 64000
+      qwen3-max:
+        aliases: ["qwen3-max"]
+        max-input-chars: 64000
+      qwen3.5-flash:
+        aliases: ["qwen3.5-flash"]
+        max-input-chars: 64000
+      qwen3.5-35b-a3b:
+        aliases: ["qwen3.5-open-source"]
+        max-input-chars: 64000
+  alibaba_eu:
+    base-url: https://ws-6e7lvsex2wxgne8z.eu-central-1.maas.aliyuncs.com/compatible-mode/v1
+    api-key-cmd: cat /Users/mobe/Tokens/ALI_BABA_TOKEN_EU.txt
+    models:
+      qwen3.6-plus:
+        aliases: ["qwen3.6-plus", "q36p"]
+        max-input-chars: 64000
+      qwen3-max:
+        aliases: ["qwen3-max", "q3m"]
+        max-input-chars: 64000
+      qwen3.5-flash:
+        aliases: ["qwen3.5-flash"]
+        max-input-chars: 64000
+      qwen3.5-35b-a3b:
+        aliases: ["qwen3.5-open-source"]
         max-input-chars: 64000
 
   openrouter:
@@ -84,7 +151,7 @@ apis:
         aliases: ["chat", "v3"]
         max-input-chars: 64000
       deepseek/deepseek-v3.2-speciale:
-        aliases: ["speciale"]
+        aliases: ["v3s"]
         max-input-chars: 64000
       gpt-4o-mini:
         aliases: ["mini"]
@@ -96,10 +163,13 @@ apis:
         aliases: ["mimo"]
         max-input-chars: 392000
       nvidia/nemotron-3-nano-30b-a3b:free:
-        aliases: ["nvi"]
+        aliases: ["nemotron"]
         max-input-chars: 392000
       minimax/minimax-m2.5:
         aliases: ["m2"]
+        max-input-chars: 392000
+      minimax/minimax-m2.5:free:
+        aliases: ["m2free"]
         max-input-chars: 392000
       z-ai/glm-5:
         aliases: ["glm5"]
@@ -113,5 +183,12 @@ apis:
       xiaomi/mimo-v2-pro:
         aliases: ["xmpro"]
         max-input-chars: 392000
-
-
+      kwaipilot/kat-coder-pro-v2:
+        aliases: ["kat"]
+        max-input-chars: 392000
+      qwen/qwen3.6-plus:
+        aliases: ["qwen36"]
+        max-input-chars: 392000
+      qwen/qwen3-coder:free:
+        aliases: ["qwen3c"]
+        max-input-chars: 392000
