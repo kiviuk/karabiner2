@@ -9,6 +9,11 @@ default-api: deepseek
 # Default model (Fast chat model)
 # default-model: o46
 # default-model: glm5
+# default-model: q38p
+# default-model: q38m
+# default-model: q38f
+# default-model: q38-dense
+# default-model: q38free
 # default-model: qwen36
 # default-model: qwen3c
 default-model: v4
@@ -19,7 +24,13 @@ default-model: v4
 # default-model: kimi
 # default-model: m2
 # default-model: m2free
-# default-model: kimi-k2.6
+# default-model: kimi-k3
+# default-model: north-mini
+# default-model: laguna
+# default-model: nemotron-ultra
+# default-model: inkling
+# default-model: nemotron-super
+# default-model: glm5.2
 # default-model: minimax-m27
 # default-model: q36p
 
@@ -48,6 +59,10 @@ include-prompt: 0
 # IMPORTANT: Increased limits so code isn't cut off
 max-retries: 3
 max-completion-tokens: 8192
+
+# NVIDIA's hosted OpenAI-compatible endpoint rejects an empty `user` field.
+# Use a stable identifier for the local end user; it is not the NVIDIA API key.
+user: "stableid"
 
 # ROLES (System Prompts)
 # You can use these via: mods --role shell "..."
@@ -84,64 +99,88 @@ apis:
     models:
       deepseek-v4-pro:
         aliases: ["v4"]
-        max-input-chars: 64000
+        max-input-chars: 1048576
       deepseek-v4-flash:
         aliases: ["v4f"]
-        max-input-chars: 64000
+        max-input-chars: 1048576
   nvidia:
     base-url: https://integrate.api.nvidia.com/v1
     api-key-cmd: cat /Users/mobe/Tokens/NVIDIA-TOKEN.txt
     models:
-      minimaxai/minimax-m2.7:
-        aliases: ["minimax-m27"]
-        max-input-chars: 64000
-      z-ai/glm-5.1:
+      nvidia/nemotron-3-ultra-550b-a55b:
+        aliases: ["nemotron-ultra", "nem3u"]
+        max-input-chars: 262144
+      nvidia/nemotron-3-super-120b-a12b:
+        aliases: ["nemotron-super", "nem3s"]
+        max-input-chars: 262144
+      nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:
+        aliases: ["nemotron-nano", "nem3n"]
+        max-input-chars: 262144
+      nvidia/nemotron-3.5-lightning-30b-a3b:
+        aliases: ["nemotron-lightning", "nem35l"]
+        max-input-chars: 1048576
+      nvidia/llama-3.1-nemotron-ultra-253b-v1:
+        aliases: ["llama-nemotron-ultra", "lnemu"]
+        max-input-chars: 131072
+      nvidia/llama-3.1-nemotron-70b-instruct:
+        aliases: ["llama-nemotron-70b", "lnem70"]
+        max-input-chars: 131072
+      nvidia/nemotron-4-340b-instruct:
+        aliases: ["nemotron-4", "nem4"]
+        max-input-chars: 131072
+      nvidia/llama-3.1-nemoguard-8b-content-safety:
+        aliases: ["nemoguard", "nguard"]
+        max-input-chars: 131072
+      google/gemma-4-31b-it:
+        aliases: ["gemma-4", "gem4"]
+        max-input-chars: 262144
+      z-ai/glm-5.3:
         aliases: ["glm5"]
-        max-input-chars: 64000
-      deepseek-ai/deepseek-v4-pro:
-        aliases: ["v4"]
-        max-input-chars: 64000
-      deepseek-ai/deepseek-v4-flash:
-        aliases: ["v4f"]
-        max-input-chars: 64000
-      openai/gpt-oss-120b:
-        aliases: ["gpt-oss-120b"]
-        max-input-chars: 64000
+        max-input-chars: 1310720
+      moonshotai/kimi-k3:
+        aliases: ["kimi-k3"]
+        max-input-chars: 1048576
       moonshotai/kimi-k2.6:
         aliases: ["kimi-k2.6"]
-        max-input-chars: 64000
+        max-input-chars: 262144
   alibaba:
     base-url: https://dashscope-intl.aliyuncs.com/compatible-mode/v1
     api-key-cmd: cat /Users/mobe/Tokens/ALI_BABA_TOKEN_INTERNATIONAL.txt
     models:
-      qwen3.6-plus:
-        aliases: ["qwen3.6-plus"]
-        max-input-chars: 64000
-      qwen3-max:
-        aliases: ["qwen3-max"]
-        max-input-chars: 64000
-      qwen3.5-flash:
-        aliases: ["qwen3.5-flash"]
-        max-input-chars: 64000
-      qwen3.5-35b-a3b:
-        aliases: ["qwen3.5-open-source"]
-        max-input-chars: 64000
+      qwen3.8-plus:
+        aliases: ["qwen3.8-plus", "q38p"]
+        max-input-chars: 1000000
+      qwen3.8-max-0902:
+        aliases: ["qwen3.8-max", "q38m"]
+        max-input-chars: 1000000
+      qwen3.8-flash:
+        aliases: ["qwen3.8-flash", "q38f"]
+        max-input-chars: 1000000
+      qwen3.8-27b:
+        aliases: ["qwen3.8-27b", "q38-dense"]
+        max-input-chars: 1000000
+      qwen3.8-27b:free:
+        aliases: ["qwen3.8-27b-free", "q38free"]
+        max-input-chars: 262144
   alibaba_eu:
     base-url: https://ws-6e7lvsex2wxgne8z.eu-central-1.maas.aliyuncs.com/compatible-mode/v1
     api-key-cmd: cat /Users/mobe/Tokens/ALI_BABA_TOKEN_EU.txt
     models:
-      qwen3.6-plus:
-        aliases: ["qwen3.6-plus", "q36p"]
-        max-input-chars: 64000
-      qwen3-max:
-        aliases: ["qwen3-max", "q3m"]
-        max-input-chars: 64000
-      qwen3.5-flash:
-        aliases: ["qwen3.5-flash"]
-        max-input-chars: 64000
-      qwen3.5-35b-a3b:
-        aliases: ["qwen3.5-open-source"]
-        max-input-chars: 64000
+      qwen3.8-plus:
+        aliases: ["qwen3.8-plus", "q38p"]
+        max-input-chars: 1000000
+      qwen3.8-max-0902:
+        aliases: ["qwen3.8-max", "q38m"]
+        max-input-chars: 1000000
+      qwen3.8-flash:
+        aliases: ["qwen3.8-flash", "q38f"]
+        max-input-chars: 1000000
+      qwen3.8-27b:
+        aliases: ["qwen3.8-27b", "q38-dense"]
+        max-input-chars: 1000000
+      qwen3.8-27b:free:
+        aliases: ["qwen3.8-27b-free", "q38free"]
+        max-input-chars: 262144
 
   openrouter:
     base-url: https://openrouter.ai/api/v1
@@ -149,46 +188,64 @@ apis:
     models:
       deepseek/deepseek-v3.2:
         aliases: ["chat", "v3"]
-        max-input-chars: 64000
-      deepseek/deepseek-v3.2-speciale:
+        max-input-chars: 163840
+      deepseek/deepseek-v3.2-exp:
         aliases: ["v3s"]
-        max-input-chars: 64000
-      gpt-4o-mini:
+        max-input-chars: 163840
+      openai/gpt-4o-mini:
         aliases: ["mini"]
-        max-input-chars: 392000
-      gpt-5.2-chat:
-        aliases: [52"]
-        max-input-chars: 392000
-      xiaomi/mimo-v2-flash:
+        max-input-chars: 128000
+      openai/gpt-5.4:
+        aliases: ["54"]
+        max-input-chars: 1050000
+      xiaomi/mimo-v2.5:
         aliases: ["mimo"]
-        max-input-chars: 392000
-      nvidia/nemotron-3-nano-30b-a3b:free:
+        max-input-chars: 1050000
+      nvidia/nemotron-3-nano-30b-a3b:
         aliases: ["nemotron"]
-        max-input-chars: 392000
+        max-input-chars: 262144
       minimax/minimax-m2.5:
         aliases: ["m2"]
-        max-input-chars: 392000
-      minimax/minimax-m2.5:free:
+        max-input-chars: 204800
+      minimax/minimax-m2.7:
         aliases: ["m2free"]
-        max-input-chars: 392000
+        max-input-chars: 204800
       z-ai/glm-5:
         aliases: ["glm5"]
-        max-input-chars: 392000
-      moonshotai/kimi-k2-thinking:
+        max-input-chars: 204800
+      moonshotai/kimi-k3:
         aliases: ["kimi"]
-        max-input-chars: 392000
-      anthropic/claude-opus-4.6:
+        max-input-chars: 1048576
+      anthropic/claude-opus-4.8:
         aliases: ["o46"]
-        max-input-chars: 392000
-      xiaomi/mimo-v2-pro:
+        max-input-chars: 1000000
+      xiaomi/mimo-v2.5-pro:
         aliases: ["xmpro"]
-        max-input-chars: 392000
-      kwaipilot/kat-coder-pro-v2:
+        max-input-chars: 1050000
+      kwaipilot/kat-coder-pro-v2.5:
         aliases: ["kat"]
-        max-input-chars: 392000
+        max-input-chars: 262144
       qwen/qwen3.6-plus:
         aliases: ["qwen36"]
-        max-input-chars: 392000
-      qwen/qwen3-coder:free:
+        max-input-chars: 1000000
+      qwen/qwen3-coder:
         aliases: ["qwen3c"]
-        max-input-chars: 392000
+        max-input-chars: 262144
+      cohere/north-mini-code:free:
+        aliases: ["north-mini"]
+        max-input-chars: 256000
+      poolside/laguna-s-2.1:free:
+        aliases: ["laguna"]
+        max-input-chars: 262144
+      nvidia/nemotron-3-ultra-550b-a55b:free:
+        aliases: ["nemotron-ultra"]
+        max-input-chars: 1000000
+      thinkingmachines/inkling:free:
+        aliases: ["inkling"]
+        max-input-chars: 1048576
+      nvidia/nemotron-3-super-120b-a12b:free:
+        aliases: ["nemotron-super"]
+        max-input-chars: 262144
+      z-ai/glm-5.2:free:
+        aliases: ["glm5.2"]
+        max-input-chars: 32768
