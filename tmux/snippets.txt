@@ -12,3 +12,6 @@ Create a work item and branch
 Create a commit based on the current work (git diff)
 Create a plan an save it to a physical file, share the location of the file, so that i can review the plan 
 brevity is king
+Use the ctx_stats MCP tool in your Pi conversation—ask “Call ctx_stats and show me the report.” It reports the overall estimated tokens saved and reduction, plus a cache-hits count and bytes saved when there have been hits. Don’t confuse that with Pi’s /ctx-stats command: in the source snapshot I checked, that command reports captured events and compactions, not token savings!
+https://asciidiagrams.github.io/
+check new ycombinator frontpage: give me the reader's digest for today 
