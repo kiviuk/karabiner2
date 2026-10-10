@@ -1,17 +1,14 @@
-repeat your response and use proper intelligible english
-rewrite comment, use proper intelligible every-day english
-explain this code and suggest improvements\nFocus on readability and edge cases.
-write unit tests for the selected function, covering edge cases
-Did you verify your claims against the xmart source: /Users/mobe/Projects/xmart (ignore legacy xml focus on the csharp code only)
-Check against the xmart source: /Users/mobe/Projects/xmart (ignore legacy xml focus on the csharp code only)
-You have shared the line numbers but didn't include the exact filename
-Where did you find this code?
-Nobody understands how this was written
-Create a work item and branch, push the branch then use mise ci to run the ci pipeline
-Create a work item and branch 
-Create a commit based on the current work (git diff)
-Create a plan an save it to a physical file, share the location of the file, so that i can review the plan 
-brevity is king
-Use the ctx_stats MCP tool in your Pi conversation—ask “Call ctx_stats and show me the report.” It reports the overall estimated tokens saved and reduction, plus a cache-hits count and bytes saved when there have been hits. Don’t confuse that with Pi’s /ctx-stats command: in the source snapshot I checked, that command reports captured events and compactions, not token savings!
-https://asciidiagrams.github.io/
+response is too dense.... breath.. full sentences.. respond calmly. dont rush: try again
+explain / discuss: this seems like a stupid idea... but apparently you did have an isue with the code ... explain
+explain - brevity is king.. use simple plain english. the text made the effort to write in clear sentences.. i expect the same curtesy from your response
+brevity is king, try again i have no idea what you just said!
 check new ycombinator frontpage: give me the reader's digest for today 
+/Users/mobe/Projects/xmart
+/Users/mobe/Projects/spark_delta
+/Users/mobe/Projects/FieldData-Cloudification
+/Users/mobe/Projects/pi
+/Users/mobe/Projects/neovim
+/Users/mobe/.config/nvim
+/Users/mobe/.pi/agent/npm/node_modules/pi-powerline-footer
+https://asciidiagrams.github.io/
+

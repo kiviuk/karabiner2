@@ -1,9 +1,9 @@
 # https://github.com/charmbracelet/mods
 
 # Default API to use
-default-api: deepseek
+# default-api: deepseek
 # default-api: alibaba
-# default-api: openrouter
+default-api: openrouter
 # # default-api: nvidia
 
 # Default model (Fast chat model)
@@ -16,7 +16,7 @@ default-api: deepseek
 # default-model: q38free
 # default-model: qwen36
 # default-model: qwen3c
-default-model: v4
+# default-model: v4
 # default-model: v4f
 # default-model: xmpro
 # default-model: kat
@@ -25,9 +25,9 @@ default-model: v4
 # default-model: m2
 # default-model: m2free
 # default-model: kimi-k3
-# default-model: north-mini
+# # default-model: north-mini
 # default-model: laguna
-# default-model: nemotron-ultra
+default-model: nemotron-ultra
 # default-model: inkling
 # default-model: nemotron-super
 # default-model: glm5.2
