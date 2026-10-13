@@ -9,6 +9,9 @@ check new ycombinator frontpage: give me the reader's digest for today
 /Users/mobe/Projects/pi
 /Users/mobe/Projects/neovim
 /Users/mobe/.config/nvim
+/Users/mobe/.pi/agent/prompts
 /Users/mobe/.pi/agent/npm/node_modules/pi-powerline-footer
+/Users/mobe/.tmux.conf
+/Users/mobe/.zalias
 https://asciidiagrams.github.io/
 
