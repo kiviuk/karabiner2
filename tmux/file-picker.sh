@@ -15,6 +15,13 @@ import os, sys
 entries = []
 for path in sys.stdin.buffer.read().split(b"\0"):
     if path:
+        parent_parts = path.split(b"/")[:-1]
+        if any(
+            part == b"__pycache__"
+            or (part.startswith(b".") and part not in (b".", b".."))
+            for part in parent_parts
+        ):
+            continue
         try:
             entries.append((os.stat(path).st_mtime_ns, path))
         except OSError:
@@ -22,7 +29,9 @@ for path in sys.stdin.buffer.read().split(b"\0"):
 entries.sort(key=lambda entry: entry[0], reverse=True)
 sys.stdout.buffer.write(b"".join(path + b"\0" for _, path in entries))
 ' |
-      fzf --read0 --print0 --no-sort --height=100% --reverse --prompt='File> ' --border=rounded
+      fzf --read0 --print0 --no-sort --height=100% --reverse --prompt='File> ' --border=rounded \
+        --preview 'bat --color=always --style=numbers --line-range=:500 -- {}' \
+        --preview-window='right:60%:wrap'
   ); then
     exit 0 # fzf was cancelled (or no file was selected)
   fi
