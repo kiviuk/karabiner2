@@ -8,14 +8,13 @@ TERM = "xterm-256color"
 
 [window]
 padding.x = 10
-padding.y = 10
+padding.y = 0
+option_as_alt = "Both"
 
 # decorations = "Buttonless"
 
 opacity = 0.8
 blur = true
-
-# Option_as_alt = "Both"
 
 [font]
 normal.family = "MesloLGS Nerd Font Mono"
@@ -36,4 +35,9 @@ semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
 bindings = [
   { key = "Return", mods = "Command", chars = "\u000a" },
   { key = "Space", mods = "Control", chars = "\u0000" },
+  # Font size control (bypasses tmux)
+  { key = "Equals", mods = "Control", mode = "~Vi|~Search", action = "IncreaseFontSize" },
+  { key = "Minus", mods = "Control", mode = "~Vi|~Search", action = "DecreaseFontSize" },
+  { key = "Key0", mods = "Control", mode = "~Vi|~Search", action = "ResetFontSize" },
 ]
+

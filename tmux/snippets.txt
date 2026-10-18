@@ -1,5 +1,5 @@
 response is too dense.... breath.. full sentences.. respond calmly. dont rush: try again
-explain / discuss: this seems like a stupid idea... but apparently you did have an isue with the code ... explain
+branch committed and pushed, now create PR
 explain - brevity is king.. use simple plain english. the text made the effort to write in clear sentences.. i expect the same curtesy from your response
 brevity is king, try again i have no idea what you just said!
 check new ycombinator frontpage: give me the reader's digest for today 
@@ -7,11 +7,14 @@ check new ycombinator frontpage: give me the reader's digest for today
 /Users/mobe/Projects/spark_delta
 /Users/mobe/Projects/FieldData-Cloudification
 /Users/mobe/Projects/pi
+/Users/mobe/.pi/agent/settings.json
+/Users/mobe/.pi/agent/prompts
+/Users/mobe/.pi/agent/skills
+/Users/mobe/.pi/agent/npm/node_modules/pi-powerline-footer
 /Users/mobe/Projects/neovim
 /Users/mobe/.config/nvim
-/Users/mobe/.pi/agent/prompts
-/Users/mobe/.pi/agent/npm/node_modules/pi-powerline-footer
 /Users/mobe/.tmux.conf
+/Users/mobe/.config/alacritty
 /Users/mobe/.zalias
 https://asciidiagrams.github.io/
 
