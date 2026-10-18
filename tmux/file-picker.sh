@@ -30,7 +30,15 @@ entries.sort(key=lambda entry: entry[0], reverse=True)
 sys.stdout.buffer.write(b"".join(path + b"\0" for _, path in entries))
 ' |
       fzf --read0 --print0 --no-sort --height=100% --reverse --prompt='File> ' --border=rounded \
-        --preview 'bat --color=always --style=numbers --line-range=:500 -- {}' \
+        --color='
+          bg:#07191e fg:#b8c5c8 fg+:#dce3e3
+          bg+:#183139 hl:#d5a53d hl+:#f1bd58
+          info:#82979b prompt:#ed8438 pointer:#ed8438
+          marker:#e4b648 spinner:#82b5b9 header:#e58a3a
+          border:#205660 preview-border:#205660 preview-bg:#07191e
+          label:#e58a3a gutter:#07191e
+        ' \
+        --preview 'bat --color=always --theme=OneHalfDark --style=numbers --line-range=:500 -- {}' \
         --preview-window='right:60%:wrap'
   ); then
     exit 0 # fzf was cancelled (or no file was selected)
