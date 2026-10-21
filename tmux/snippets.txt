@@ -1,5 +1,6 @@
 response is too dense.... breath.. full sentences.. respond calmly. dont rush: try again
-branch committed and pushed, now create PR
+create branch and work-item
+I have commmited changes and pushed to remote. Now YOU create a pull request for me.
 explain - brevity is king.. use simple plain english. the text made the effort to write in clear sentences.. i expect the same curtesy from your response
 brevity is king, try again i have no idea what you just said!
 check new ycombinator frontpage: give me the reader's digest for today 
@@ -8,6 +9,7 @@ check new ycombinator frontpage: give me the reader's digest for today
 /Users/mobe/Projects/FieldData-Cloudification
 /Users/mobe/Projects/pi
 /Users/mobe/.pi/agent/settings.json
+/Users/mobe/.pi/agent/npm/node_modules
 /Users/mobe/.pi/agent/prompts
 /Users/mobe/.pi/agent/skills
 /Users/mobe/.pi/agent/npm/node_modules/pi-powerline-footer
@@ -16,5 +18,7 @@ check new ycombinator frontpage: give me the reader's digest for today
 /Users/mobe/.tmux.conf
 /Users/mobe/.config/alacritty
 /Users/mobe/.zalias
+/Users/mobe/.zshrc
+/Users/mobe/Library/Application Support/Code/User
 https://asciidiagrams.github.io/
 
